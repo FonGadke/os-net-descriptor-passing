@@ -89,6 +89,8 @@ int main() {
         while (read(pipefd[0], &buf, 1) > 0) {
             write(STDOUT_FILENO, &buf, 1);
         }
+
+        close(pipefd[0]);
         close(sock);
     }
 }
