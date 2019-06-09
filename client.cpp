@@ -24,12 +24,12 @@ int main() {
 
     sock = socket(AF_UNIX, SOCK_STREAM, 0);
     if (sock < 0) {
-        perror("Can't create socket\n");
+        perror("Can't create socket");
         exit(EXIT_FAILURE);
     }
 
     if (connect(sock, (struct sockaddr*) &addr, sizeof(addr)) < 0) {
-        perror("Can't connect\n");
+        perror("Can't connect");
         exit(EXIT_FAILURE);
     }
 

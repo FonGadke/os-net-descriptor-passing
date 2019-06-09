@@ -29,12 +29,12 @@ int main() {
     listener = socket(AF_UNIX, SOCK_STREAM, 0);
 
     if (listener < 0) {
-        perror("Can't create socket\n");
+        perror("Can't create socket");
         exit(EXIT_FAILURE);
     }
 
     if (bind(listener, (struct sockaddr*) &addr, sizeof(addr)) < 0) {
-        perror("Can't bind\n");
+        perror("Can't bind");
         exit(EXIT_FAILURE);
     }
 
@@ -43,7 +43,7 @@ int main() {
     while (true) {
         sock = accept(listener, NULL, NULL);
         if (sock < 0) {
-            perror("Can't accept\n");
+            perror("Can't accept");
             exit(EXIT_FAILURE);
         }
 
